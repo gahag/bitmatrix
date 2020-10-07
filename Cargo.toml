@@ -1,0 +1,21 @@
+[package]
+name = "bitmatrix"
+version = "0.1.0"
+license = "MIT"
+edition = "2018"
+authors = ["gahag <gabriel.s.b@live.com>"]
+description = "A bitvec based bitmatrix, akin to bit-matrix which is based on bit-vec"
+repository = "https://github.com/gahag/bitmatrix"
+readme = "readme.md"
+keywords = [ "bits", "bitwise", "matrix", "bitmatrix", "container" ]
+categories = [ "data-structures" ]
+
+[dependencies]
+bitvec = { version = "0.19" }
+serde = { version = "1", optional = true, features = ["derive"] }
+
+[features]
+serde_support = ["serde", "bitvec/serde"]
+
+[package.metadata.docs.rs]
+features = [ "serde_support" ]
